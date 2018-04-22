@@ -19,13 +19,13 @@ def myprog():
     plt.plot(x, y1, color ='blue');
     plt.xlabel('x');
     plt.ylabel('Sin(x)');
-    plt.savefig('myApp-04/static/sin.png')
+    plt.savefig('examples-08-flask/myApp-04/static/sin.png')
 
     plt.clf();
     plt.plot(x, y2, color = 'red');
     plt.xlabel('x');
     plt.ylabel('Cos(x)');
-    plt.savefig('myApp-04/static/cos.png');
+    plt.savefig('examples-08-flask/myApp-04/static/cos.png');
     plt.close()
     
     myvar = 18
