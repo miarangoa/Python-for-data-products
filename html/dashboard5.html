@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: "Lato", sans-serif;}
+
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+/* Style the tab content */
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 90px;
+    text-align: left;
+}
+
+</style>
+</head>
+<body>
+
+<p>Haga click en el menu:</p>
+
+<div id="Grafica1" class="tabcontent">
+  <p>Grafica de Sin(x).</p>
+  <img src="sin.png" alt="Sin(x)">
+</div>
+
+<div id="Grafica2" class="tabcontent">
+  <p>Grafica de Cos(x).</p>
+  <img src="cos.png" alt="Cos(x)">
+</div>
+
+<button class="tablink" onclick="openTab('Grafica1', this, 'red')" id="defaultOpen">Grafica 1</button>
+<button class="tablink" onclick="openTab('Grafica2', this, 'green')">Grafica 2</button>
+
+
+<script>
+function openTab(tabName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(tabName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+
+}
+document.getElementById("defaultOpen").click();
+</script>
+     
+</body>
+</html> 
