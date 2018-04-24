@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Columnas */
+.column {
+    width: 25%;
+    float: left;
+    padding: 10px;
+    height: 200px; /* Should be removed. Only for demonstration */
+}
+
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Style the tab */
+.tab {
+    float: left;
+    border: 1px solid #eee;
+    background-color: #eee;
+    width: 10%;
+    height: 500px;
+}
+
+
+/* Style the buttons inside the tab */
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 10px 16px; /* ancho y largo del boton*/
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: right;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+    color: white;
+    background-color: #2E9AFE;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 70%;
+    border-left: none;
+    height: 200px;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+
+.container {
+  width: 100%;
+  background-color: #ddd;
+}
+
+.skills {
+  text-align: right;
+  padding-right: 20px;
+  line-height: 40px;
+  color: white;
+}
+
+.html {width: 90%; background-color: #4CAF50;}
+.css {width: 80%; background-color: #2196F3;}
+.js {width: 65%; background-color: #f44336;}
+.php {width: 60%; background-color: #808080;}
+
+      
+      
+      
+.danger {
+    background-color: #ffdddd;
+    border-left: 6px solid #f44336;
+}
+
+.success {
+    background-color: #ddffdd;
+    border-left: 6px solid #4CAF50;
+}
+
+.info {
+    background-color: #e7f3fe;
+    border-left: 6px solid #2196F3;
+}
+
+
+.warning {
+    background-color: #ffffcc;
+    border-left: 6px solid #ffeb3b;
+}
+      
+      
+</style>
+</head>
+<body>
+
+<h1><font color=#FF8000>Dashboard</font></h1>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>Column 1</h2>
+    <img src="img_avatar1.png" alt="Avatar" class="avatar">
+  </div>
+  <div class="column" style="background-color:#bbb;">
+    <h2>Column 2</h2>
+    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+  </div>
+  <div class="column" style="background-color:#ccc;">
+    <h2>Column 3</h2>
+    <img src="img_avatar3.png" alt="Avatar" class="avatar">
+  </div>
+</div>
+
+
+
+
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'Dashboard1')" id="defaultOpen">
+    <img src="img_avatar1.png" alt="Avatar" class="avatar">
+    Dashboard 1
+  </button>
+      
+  <button class="tablinks" onclick="openTab(event, 'Dashboard2')">Dashboard 2</button>
+  <button class="tablinks" onclick="openTab(event, 'Dashboard3')">Dashboard 3</button>
+  <button class="tablinks" onclick="openTab(event, 'Dashboard4')">Dashboard 4</button>
+</div>
+
+<div id="Dashboard1" class="tabcontent">
+  <p>Grafica de Sin(x).</p>
+  <img src="sin.png" alt="Sin(x)">
+</div>
+
+<div id="Dashboard2" class="tabcontent">
+  <p>Grafica de Cos(x).</p>
+  <img src="cos.png" alt="Cos(x)">
+</div>
+
+<div id="Dashboard3" class="tabcontent">
+  <p>HTML</p>   <div class="container"> <div class="skills html">90%</div>  </div> 
+  <p>CSS</p>    <div class="container"> <div class="skills css">80%</div>   </div>
+  <p>JavaScript</p> <div class="container"> <div class="skills js">65%</div> </div>
+  <p>PHP</p>        <div class="container">
+  <div class="skills php">60%</div>
+</div>
+</div>
+
+<div id="Dashboard4" class="tabcontent">
+  <div class="danger">  <p><strong>Danger!</strong> Some text... </p> </div>
+  <div class="success"> <p><strong>Success!</strong> Some text...</p> </div>
+  <div class="info">    <p><strong>Info!</strong> Some text...   </p> </div>
+  <div class="warning"> <p><strong>Warning!</strong> Some text...</p> </div>
+</div>
+
+
+
+
+<script>
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+     
+</body>
+</html> 
+
