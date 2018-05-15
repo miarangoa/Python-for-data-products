@@ -16,7 +16,7 @@ reconocen los siguientes productos de datos:
 
 El siguiente grafo muestra donde encaja este tutorial en el proceso.
 
-![readme-python-data-products.jpg](images/readme-python-data-products.jpg)
+![readme.jpg](images/readme.jpg)
 
 
 ## Objetivos
